@@ -5,5 +5,6 @@ package com.garthdb.Validate {
 		public var message:String = '';
 		public var min:String = '';
 		public var max:String = '';
+		public var order:int = -1;
 	}
 }

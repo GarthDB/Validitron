@@ -1,13 +1,12 @@
-package com.garthdb.Validate {
+package org.Validitron {
 	import flash.utils.describeType;
 
-	public class Validator {
+	public class Regulator {
 		public static function validate(object:*):* {
 			var output:Boolean;
 			var classInfo:XML = describeType(object);
 			for each (var variable:XML in classInfo..variable) {
 				var validateMeta:XMLList = variable..metadata.(@name == 'Validate');
-				trace(validateMeta);
 			}
 			return classInfo;
 		}

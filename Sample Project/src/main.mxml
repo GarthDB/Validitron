@@ -9,7 +9,7 @@
 
 			protected function application1_creationCompleteHandler(event:FlexEvent):void {
 				var result:* = Validator.validate(vo);
-				trace(result);
+				
 			}
 		]]>
 	</fx:Script>

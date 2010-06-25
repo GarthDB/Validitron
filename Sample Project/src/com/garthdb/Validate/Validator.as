@@ -7,28 +7,31 @@ package com.garthdb.Validate {
 			var classInfo:XML = describeType(object);
 			for each (var variable:XML in classInfo..variable) {
 				var validateMeta:XMLList = variable..metadata.(@name == 'Validate');
-				trace(variable.@name);
 				for (var i:int = validateMeta.length() - 1; i >= 0; i--) {
 					var result:ValidationResult = new ValidationResult();
-					result.validator = new ValidateVO();
+					var validate:ValidateVO = new ValidateVO();
+					var order:int;
 					for each (var arg:XML in validateMeta[i]..arg){
 						switch(arg.@key){
 							case 'rule':
-								result.validator.rule = arg.@value;
+								validate.rule = arg.@value;
 								break;
 							case 'message':
-								result.validator.message = arg.@value;
+								validate.message = arg.@value;
 								break;
 							case 'min':
-								result.validator.min = arg.@value;
+								validate.min = arg.@value;
 								break;
 							case 'max':
-								result.validator.max = arg.@value;
+								validate.max = arg.@value;
 								break;
+							case 'order':
+								validate.max = arg.@order;
 							default:
 								break;
 						}
 					}
+					result.validator = validate;
 				}
 			}
 			return classInfo;
