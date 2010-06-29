@@ -1,3 +1,4 @@
 .metadata
 */.*
 */bin-debug
+*/bin-debug/*
