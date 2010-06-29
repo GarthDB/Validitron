@@ -1,15 +1,18 @@
 package org.Validitron {
 	import flash.utils.describeType;
 	
+	import org.Validitron.vo.RuleVO;
+	
 	/**
 	 * TODO: Add documentation
 	 * @author garthdb
 	 * 
 	 */
-	public class Regulator {
+	public class Validitron {
 		
-		public var defaultRules:Object = {};
+		public var defaultRules:Object = {email:new RuleVO(email)};
 		public static const email:RegExp = /\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i;
+		public static const zip:RegExp =  /(\d{5,9})|(\d{5}-\d{4})/;
 		
 		/**
 		 * TODO: Add documentation
