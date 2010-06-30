@@ -3,12 +3,12 @@
 			   xmlns:vo="com.garthdb.vo.*" creationComplete="application1_creationCompleteHandler(event)">
 	<fx:Script>
 		<![CDATA[
-			import com.garthdb.Validate.Validator;
-
 			import mx.events.FlexEvent;
+			
+			import org.Validitron.Validitron;
 
 			protected function application1_creationCompleteHandler(event:FlexEvent):void {
-				var result:* = Validator.validate(vo);
+				var result:* = Validitron.validate(vo);
 				
 			}
 		]]>
